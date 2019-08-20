@@ -1,0 +1,12 @@
+opkg update
+opkg install kmod-l2tp kmod-l2tp-ip kmod-pppol2tp ppp-mod-pppol2tp xl2tpd
+
+#create file di /etc/config/network/
+config interface 'aaisp'
+        option proto 'l2tp'
+        option server 'l2tp.aa.net.uk'
+        option username 'yourusername@a'
+        option password 'YOURPASSWORD'
+        option ipv6 '1'
+        option peerdns '0'
+        option metric '50'
